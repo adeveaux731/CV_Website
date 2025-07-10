@@ -15,7 +15,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #80A1D4 0%, #C0B9DD 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -23,7 +23,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background: white;
+            background: #F7F4EA;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0,0,0,0.15);
@@ -42,7 +42,7 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            background: linear-gradient(135deg, #80A1D4 0%, #75C9C8 100%);
             color: white;
             padding: 60px 40px;
             text-align: center;
@@ -78,7 +78,7 @@
             border-radius: 50%;
             border: 5px solid rgba(255,255,255,0.3);
             margin: 0 auto 20px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #C0B9DD, #DED9E2);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -145,6 +145,9 @@
             margin-bottom: 20px;
             position: relative;
             padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .section-title::after {
@@ -154,16 +157,20 @@
             left: 0;
             width: 50px;
             height: 3px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #80A1D4, #75C9C8);
             border-radius: 2px;
         }
 
+        .section-icon {
+            font-size: 1.8rem;
+        }
+
         .experience-item, .formation-item {
-            background: #f8f9fa;
+            background: #FFFFFF;
             padding: 25px;
             border-radius: 15px;
             margin-bottom: 20px;
-            border-left: 4px solid #3498db;
+            border-left: 4px solid #80A1D4;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -176,7 +183,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(52, 152, 219, 0.05));
+            background: linear-gradient(45deg, transparent, rgba(128, 161, 212, 0.05));
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -198,7 +205,7 @@
         }
 
         .company {
-            color: #3498db;
+            color: #80A1D4;
             font-weight: 500;
             margin-bottom: 10px;
         }
@@ -224,7 +231,7 @@
             content: '▸';
             position: absolute;
             left: 0;
-            color: #3498db;
+            color: #75C9C8;
             font-weight: bold;
         }
 
@@ -235,16 +242,25 @@
         }
 
         .skill-category {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: linear-gradient(135deg, #FFFFFF 0%, #DED9E2 100%);
             padding: 20px;
             border-radius: 15px;
-            border: 1px solid #dee2e6;
+            border: 1px solid #C0B9DD;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(128, 161, 212, 0.2);
         }
 
         .skill-category h4 {
             color: #2c3e50;
             margin-bottom: 15px;
             font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .skill-tags {
@@ -254,7 +270,7 @@
         }
 
         .skill-tag {
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #80A1D4, #75C9C8);
             color: white;
             padding: 6px 12px;
             border-radius: 20px;
@@ -267,49 +283,148 @@
             transform: scale(1.05);
         }
 
-        .languages {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+        /* Nouvelles sections avec boîtes rondes */
+        .languages-section {
+            margin-bottom: 40px;
         }
 
-        .language-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .language-card {
             background: white;
-            border-radius: 10px;
-            border: 1px solid #dee2e6;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #DED9E2;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(128, 161, 212, 0.1);
+        }
+
+        .language-card:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 8px 25px rgba(128, 161, 212, 0.3);
+            border-color: #80A1D4;
+        }
+
+        .language-flag {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .language-name {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
         }
 
         .language-level {
-            background: #28a745;
+            background: linear-gradient(45deg, #80A1D4, #75C9C8);
             color: white;
-            padding: 4px 8px;
-            border-radius: 12px;
+            padding: 4px 12px;
+            border-radius: 15px;
             font-size: 0.8rem;
             font-weight: bold;
+            display: inline-block;
         }
 
-        .interests {
-            display: flex;
-            flex-wrap: wrap;
+        .interests-section {
+            margin-bottom: 40px;
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
+            margin-top: 20px;
         }
 
-        .interest-item {
-            background: linear-gradient(45deg, #28a745, #20c997);
-            color: white;
-            padding: 10px 15px;
-            border-radius: 25px;
-            font-weight: 500;
+        .interest-card {
+            background: linear-gradient(135deg, #FFFFFF 0%, #DED9E2 100%);
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #C0B9DD;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .interest-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+        .interest-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #80A1D4, #75C9C8);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 20px;
+        }
+
+        .interest-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .interest-card:hover {
+            transform: translateY(-5px) rotate(2deg);
+            box-shadow: 0 10px 30px rgba(128, 161, 212, 0.4);
+        }
+
+        .interest-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .interest-text {
+            font-weight: 600;
+            color: #2c3e50;
+            position: relative;
+            z-index: 1;
+        }
+
+        .full-width-section {
+            grid-column: 1 / -1;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(117, 201, 200, 0.2) 0%, rgba(222, 217, 226, 0.3) 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #80A1D4 0%, #75C9C8 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cta-button {
+            background: white;
+            color: #80A1D4;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
         @media (max-width: 768px) {
@@ -328,42 +443,20 @@
                 gap: 15px;
             }
 
-            .skills-grid {
+            .skills-grid, .languages-grid, .interests-grid {
                 grid-template-columns: 1fr;
             }
         }
 
-        .highlight {
-            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 600;
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
         }
 
-        .cta-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px;
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .cta-button {
-            background: white;
-            color: #667eea;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 20px;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -379,8 +472,11 @@
 
         <main class="main-content">
             <div class="left-column">
-                <section class="section">
-                    <h2 class="section-title">Expériences Pédagogiques</h2>
+                <section class="section fade-in">
+                    <h2 class="section-title">
+                        <span class="section-icon">🎓</span>
+                        Expériences Pédagogiques
+                    </h2>
                     
                     <div class="experience-item">
                         <h3 class="job-title">Conceptrice et animatrice de formations techniques</h3>
@@ -419,8 +515,11 @@
                     </div>
                 </section>
 
-                <section class="section">
-                    <h2 class="section-title">Formation</h2>
+                <section class="section fade-in">
+                    <h2 class="section-title">
+                        <span class="section-icon">🎯</span>
+                        Formation
+                    </h2>
                     
                     <div class="formation-item">
                         <h3 class="job-title">Diplôme d'ingénieure en systèmes numériques</h3>
@@ -433,101 +532,12 @@
                         </ul>
                     </div>
                 </section>
-            </div>
 
-            <div class="right-column">
-                <section class="section">
-                    <h2 class="section-title">Compétences</h2>
-                    
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h4>Ingénierie pédagogique</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Conception de formations</span>
-                                <span class="skill-tag">Animation d'ateliers</span>
-                                <span class="skill-tag">Analyse des besoins</span>
-                                <span class="skill-tag">Supports multimédia</span>
-                                <span class="skill-tag">Accompagnement</span>
-                            </div>
-                        </div>
-
-                        <div class="skill-category">
-                            <h4>Technologies numériques</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">VHDL</span>
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">C/C++</span>
-                                <span class="skill-tag">HTML/CSS</span>
-                                <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">Matlab</span>
-                                <span class="skill-tag">LaTeX</span>
-                                <span class="skill-tag">FreeRTOS</span>
-                            </div>
-                        </div>
-
-                        <div class="skill-category">
-                            <h4>Outils de conception</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Cadence Virtuoso</span>
-                                <span class="skill-tag">Keil Micro Vision</span>
-                                <span class="skill-tag">GitLab</span>
-                                <span class="skill-tag">Arduino</span>
-                            </div>
-                        </div>
-
-                        <div class="skill-category">
-                            <h4>Domaines techniques</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">VLSI</span>
-                                <span class="skill-tag">Systèmes Embarqués</span>
-                                <span class="skill-tag">Traitement du Signal</span>
-                                <span class="skill-tag">IoT</span>
-                                <span class="skill-tag">Bluetooth</span>
-                                <span class="skill-tag">UART/SPI</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="section">
-                    <h2 class="section-title">Langues</h2>
-                    <div class="languages">
-                        <div class="language-item">
-                            <span>🇬🇧 Anglais</span>
-                            <span class="language-level">B2 Certifié</span>
-                        </div>
-                        <div class="language-item">
-                            <span>🇩🇪 Allemand</span>
-                            <span class="language-level">A2</span>
-                        </div>
-                        <div class="language-item">
-                            <span>🇸🇪 Suédois</span>
-                            <span class="language-level">A2</span>
-                        </div>
-                        <div class="language-item">
-                            <span>🇯🇵 Japonais</span>
-                            <span class="language-level">A2</span>
-                        </div>
-                        <div class="language-item">
-                            <span>🇮🇳 Hindi</span>
-                            <span class="language-level">A2</span>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="section">
-                    <h2 class="section-title">Centres d'intérêt</h2>
-                    <div class="interests">
-                        <span class="interest-item">🎯 Diversité & Inclusion</span>
-                        <span class="interest-item">🏃‍♀️ Course à pied</span>
-                        <span class="interest-item">🧘‍♀️ Ashtanga Yoga</span>
-                        <span class="interest-item">🌍 Cultures internationales</span>
-                        <span class="interest-item">📚 Apprentissage des langues</span>
-                    </div>
-                </section>
-
-                <section class="section">
-                    <h2 class="section-title">Expériences techniques</h2>
+                <section class="section fade-in">
+                    <h2 class="section-title">
+                        <span class="section-icon">🚀</span>
+                        Expériences techniques
+                    </h2>
                     
                     <div class="experience-item">
                         <h3 class="job-title">Ingénieure Systèmes Embarqués</h3>
@@ -552,6 +562,132 @@
                     </div>
                 </section>
             </div>
+
+            <div class="right-column">
+                <section class="section fade-in">
+                    <h2 class="section-title">
+                        <span class="section-icon">⚡</span>
+                        Compétences
+                    </h2>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>🎨 Ingénierie pédagogique</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Conception de formations</span>
+                                <span class="skill-tag">Animation d'ateliers</span>
+                                <span class="skill-tag">Analyse des besoins</span>
+                                <span class="skill-tag">Supports multimédia</span>
+                                <span class="skill-tag">Accompagnement</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h4>💻 Technologies numériques</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">VHDL</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">C/C++</span>
+                                <span class="skill-tag">HTML/CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">Matlab</span>
+                                <span class="skill-tag">LaTeX</span>
+                                <span class="skill-tag">FreeRTOS</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h4>🛠️ Outils de conception</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Cadence Virtuoso</span>
+                                <span class="skill-tag">Keil Micro Vision</span>
+                                <span class="skill-tag">GitLab</span>
+                                <span class="skill-tag">Arduino</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h4>🔬 Domaines techniques</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">VLSI</span>
+                                <span class="skill-tag">Systèmes Embarqués</span>
+                                <span class="skill-tag">Traitement du Signal</span>
+                                <span class="skill-tag">IoT</span>
+                                <span class="skill-tag">Bluetooth</span>
+                                <span class="skill-tag">UART/SPI</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section languages-section fade-in">
+                    <h2 class="section-title">
+                        <span class="section-icon">🌍</span>
+                        Langues
+                    </h2>
+                    <div class="languages-grid">
+                        <div class="language-card">
+                            <div class="language-flag">🇫🇷</div>
+                            <div class="language-name">Français</div>
+                            <div class="language-level">Natif</div>
+                        </div>
+                        <div class="language-card">
+                            <div class="language-flag">🇬🇧</div>
+                            <div class="language-name">Anglais</div>
+                            <div class="language-level">B2 Certifié</div>
+                        </div>
+                        <div class="language-card">
+                            <div class="language-flag">🇩🇪</div>
+                            <div class="language-name">Allemand</div>
+                            <div class="language-level">A2</div>
+                        </div>
+                        <div class="language-card">
+                            <div class="language-flag">🇸🇪</div>
+                            <div class="language-name">Suédois</div>
+                            <div class="language-level">A2</div>
+                        </div>
+                        <div class="language-card">
+                            <div class="language-flag">🇯🇵</div>
+                            <div class="language-name">Japonais</div>
+                            <div class="language-level">A2</div>
+                        </div>
+                        <div class="language-card">
+                            <div class="language-flag">🇮🇳</div>
+                            <div class="language-name">Hindi</div>
+                            <div class="language-level">A2</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section interests-section fade-in">
+                    <h2 class="section-title">
+                        <span class="section-icon">🎨</span>
+                        Centres d'intérêt
+                    </h2>
+                    <div class="interests-grid">
+                        <div class="interest-card">
+                            <div class="interest-icon">🎯</div>
+                            <div class="interest-text">Diversité & Inclusion</div>
+                        </div>
+                        <div class="interest-card">
+                            <div class="interest-icon">🏃‍♀️</div>
+                            <div class="interest-text">Course à pied</div>
+                        </div>
+                        <div class="interest-card">
+                            <div class="interest-icon">🧘‍♀️</div>
+                            <div class="interest-text">Ashtanga Yoga</div>
+                        </div>
+                        <div class="interest-card">
+                            <div class="interest-icon">🌍</div>
+                            <div class="interest-text">Cultures internationales</div>
+                        </div>
+                        <div class="interest-card">
+                            <div class="interest-icon">📚</div>
+                            <div class="interest-text">Apprentissage des langues</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </main>
 
         <div class="cta-section">
@@ -561,7 +697,7 @@
     </div>
 
     <script>
-        // Animation au scroll
+        // Animation des éléments au scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -570,28 +706,55 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('visible');
                 }
             });
         }, observerOptions);
 
         // Observer tous les éléments à animer
-        document.querySelectorAll('.experience-item, .formation-item, .skill-category').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease-out';
+        document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
 
-        // Animation des skill tags au survol
-        document.querySelectorAll('.skill-tag').forEach(tag => {
-            tag.addEventListener('mouseenter', function() {
-                this.style.background = 'linear-gradient(45deg, #764ba2, #667eea)';
+        // Animation des cartes d'expérience
+        document.querySelectorAll('.experience-item, .formation-item').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
             });
             
-            tag.addEventListener('mouseleave', function() {
-                this.style.background = 'linear-gradient(45deg, #667eea, #764ba2)';
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+        });
+
+        // Animation des skill tags
+        document.querySelectorAll('.skill-tag').forEach(skill => {
+            skill.addEventListener('mouseenter', function() {
+                this.style.background = 'linear-gradient(45deg, #75C9C8, #80A1D4)';
+            });
+            
+            skill.addEventListener('mouseleave', function() {
+                this.style.background = 'linear-gradient(45deg, #80A1D4, #75C9C8)';
+            });
+        });
+
+        // Animation des cartes de langues
+        document.querySelectorAll('.language-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'translateY(-5px) scale(1.1) rotate(5deg)';
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-5px) scale(1.03)';
+                }, 200);
+            });
+        });
+
+        // Animation des cartes d'intérêt
+        document.querySelectorAll('.interest-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'translateY(-5px) rotate(10deg) scale(1.1)';
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-5px) rotate(2deg)';
+                }, 300);
             });
         });
 
